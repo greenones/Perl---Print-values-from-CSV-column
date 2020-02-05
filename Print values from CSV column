@@ -1,0 +1,13 @@
+#!/use/bin/perl
+ 
+Use Text::CSV;
+ 
+My $csv = Text::CSV->new ();
+ 
+Open $fh, “/path/to/CSV.csv”;
+While ( my $fields = $csv->getline($fh) ) {
+  Print “Value = @{$fields}[13]\n”;}
+}
+Close ($fh)
+ 
+#Prints values in column 13
